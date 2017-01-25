@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report5_transaksi" language="groovy" pageWidth="540" pageHeight="720" columnWidth="500" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="49"/>
+	<parameter name="parameter1_no" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     view_penggajian.`no_penggajian` AS view_penggajian_no_penggajian,
+     view_penggajian.`tgl_penggajian` AS view_penggajian_tgl_penggajian,
+     view_penggajian.`nik` AS view_penggajian_nik,
+     view_penggajian.`nama` AS view_penggajian_nama,
+     view_penggajian.`kode_jabatan` AS view_penggajian_kode_jabatan,
+     view_penggajian.`jabatan` AS view_penggajian_jabatan,
+     view_penggajian.`gaji` AS view_penggajian_gaji,
+     view_penggajian.`katerangan` AS view_penggajian_katerangan,
+     tbl_karyawan.`nik` AS tbl_karyawan_nik,
+     tbl_karyawan.`nama` AS tbl_karyawan_nama,
+     tbl_karyawan.`jenis_kelamin` AS tbl_karyawan_jenis_kelamin,
+     tbl_karyawan.`agama` AS tbl_karyawan_agama,
+     tbl_karyawan.`tanggal_lahir` AS tbl_karyawan_tanggal_lahir,
+     tbl_karyawan.`telpon` AS tbl_karyawan_telpon,
+     tbl_karyawan.`alamat` AS tbl_karyawan_alamat,
+     tbl_karyawan.`kode_jabatan` AS tbl_karyawan_kode_jabatan
+FROM
+     `tbl_karyawan` tbl_karyawan INNER JOIN `view_penggajian` view_penggajian ON tbl_karyawan.`nik` = view_penggajian.`nik`
+WHERE
+view_penggajian.`no_penggajian`=$P{parameter1_no}]]>
+	</queryString>
+	<field name="view_penggajian_no_penggajian" class="java.lang.String"/>
+	<field name="view_penggajian_tgl_penggajian" class="java.sql.Date"/>
+	<field name="view_penggajian_nik" class="java.lang.Integer"/>
+	<field name="view_penggajian_nama" class="java.lang.String"/>
+	<field name="view_penggajian_kode_jabatan" class="java.lang.String"/>
+	<field name="view_penggajian_jabatan" class="java.lang.String"/>
+	<field name="view_penggajian_gaji" class="java.lang.Integer"/>
+	<field name="view_penggajian_katerangan" class="java.lang.String"/>
+	<field name="tbl_karyawan_nik" class="java.lang.Integer"/>
+	<field name="tbl_karyawan_nama" class="java.lang.String"/>
+	<field name="tbl_karyawan_jenis_kelamin" class="java.lang.String"/>
+	<field name="tbl_karyawan_agama" class="java.lang.String"/>
+	<field name="tbl_karyawan_tanggal_lahir" class="java.sql.Date"/>
+	<field name="tbl_karyawan_telpon" class="java.lang.String"/>
+	<field name="tbl_karyawan_alamat" class="java.lang.String"/>
+	<field name="tbl_karyawan_kode_jabatan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="174" height="34"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[NOTA PARKIR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="265" height="24"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[PT PERMATA INDAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="278" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Jl Melati No 79 Bandar lampung, Lampung]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="283" splitType="Stretch">
+			<textField>
+				<reportElement x="74" y="59" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{view_penggajian_nik}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="59" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[NIK :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="138" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[TELPON :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="158" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[ALAMAT :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="99" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[JABATAN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="79" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[NAMA : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="118" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[GAJI :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="178" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[KETERANGAN : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="74" y="79" width="250" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbl_karyawan_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="138" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbl_karyawan_telpon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="158" width="250" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbl_karyawan_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="119" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{view_penggajian_gaji}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="99" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{view_penggajian_jabatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="178" width="400" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{view_penggajian_katerangan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="293" y="26" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{view_penggajian_tgl_penggajian}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="6" width="31" height="20"/>
+				<textElement/>
+				<text><![CDATA[NO : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="325" y="6" width="68" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{view_penggajian_no_penggajian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
